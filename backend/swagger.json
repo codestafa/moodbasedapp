@@ -1,0 +1,117 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"LoginResponse": {
+				"properties": {
+					"access_token": {
+						"type": "string",
+						"description": "The token used to access the Spotify Web API"
+					},
+					"token_type": {
+						"type": "string",
+						"description": "The type of token which is of type bearer"
+					},
+					"expires_in": {
+						"type": "number",
+						"format": "double",
+						"description": "The time after which the access token expires"
+					},
+					"scope": {
+						"type": "string"
+					},
+					"grant_type": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"access_token",
+					"token_type",
+					"expires_in",
+					"scope",
+					"grant_type"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "backend",
+		"version": "1.0.0",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/metadata/{trackId}": {
+			"get": {
+				"operationId": "GetTrack",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "trackId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/token": {
+			"get": {
+				"operationId": "AccessToken",
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/refreshtoken": {
+			"get": {
+				"operationId": "RefreshToken",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/LoginResponse"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": []
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}

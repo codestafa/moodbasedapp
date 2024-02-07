@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "es2022" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "module": "commonjs" /* Specify what module code is generated. */,
+    "outDir": "dist" /* Specify an output folder for all emitted files. */,
+    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
+    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": true,
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "resolveJsonModule": true,
+
+    /* Experimental Options */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    "noUncheckedIndexedAccess": true /* Add 'undefined' to a type when accessed using an index. */,
+    "noImplicitOverride": true /* Ensure overriding members in derived classes are marked with an override modifier. */,
+    "noPropertyAccessFromIndexSignature": true /* Enforces using indexed accessors for keys declared using an indexed type. */
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
